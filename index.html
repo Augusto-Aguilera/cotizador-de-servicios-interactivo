@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patrick Aguilera - Desarrollador web freelance.">
+    <title>Patrick Aguilera | Desarrollador Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <h2 class="logo">Patrick Aguilera</h2>
+        <div class="menu-toggle" id="mobile-toggle">☰</div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#apps">Mini-Apps</a></li>
+            <li><a href="#quote">Cotizador</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="reveal active">
+            <h1>Patrick Aguilera</h1>
+            <p class="subtitle">DESARROLLADOR WEB FREELANCE</p>
+        </div>
+    </header>
+
+    <section id="about" class="reveal">
+        <h2>Sobre mí</h2>
+        <p>Hola, soy Patrick Aguilera, desarrollador web enfocado en crear sitios rápidos y modernos para negocios. Mi objetivo es que tu marca resalte con tecnología de última generación.</p>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2>Proyectos Destacados</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="img/LaBuenaMesa.png" alt="Restaurante">
+                <div class="project-info">
+                    <span class="tag">Gastronomía</span>
+                    <h3>La Buena Mesa</h3>
+                    <p>Web premium para restaurantes con menú interactivo y reservas por WhatsApp.</p>
+                    <div class="project-links">
+                        <a href="https://labuenamesaok.netlify.app/" target="_blank">Sitio</a>
+                        <a href="https://github.com/Augusto-Aguilera/La-Buena-Mesa.git" target="_blank">Código</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="crypto-header-visual">
+                    <i class="fa-brands fa-bitcoin"></i>
+                </div>
+                <div class="project-info">
+                    <span class="tag">Finanzas / API</span>
+                    <h3>Crypto Tracker</h3>
+                    <div id="crypto-container">
+                        <p>Cargando precios en vivo...</p>
+                    </div>
+                    <div class="project-links">
+                        <button onclick="fetchCrypto()" class="btn-refresh">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="img/IronFit.png" alt="Gimnasio">
+                <div class="project-info">
+                    <span class="tag">Fitness / UX</span>
+                    <h3>IronFit Premium</h3>
+                    <p>Landing page de alto impacto para gimnasios con planes y servicios detallados.</p>
+                    <div class="project-links">
+                        <a href="https://ironfitgimok.netlify.app/" target="_blank">Sitio</a>
+                        <a href="https://github.com/Augusto-Aguilera/IronFit-Gym" target="_blank">Código</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apps" class="reveal">
+        <h2>Mini Proyectos Interactivos</h2>
+        <div class="apps-container">
+            <div class="app-card">
+                <h3>Skull Tap Pro</h3>
+                <p id="game-msg">¡Adivina el número del 1 al 10!</p>
+                <input type="number" id="game-input" placeholder="Ej: 5">
+                <button onclick="checkGame()" class="btn-app">Probar Suerte</button>
+            </div>
+            <div class="app-card">
+                <h3>Mi To-Do List</h3>
+                <div class="todo-input-group">
+                    <input type="text" id="todo-input" placeholder="Nueva tarea...">
+                    <button onclick="addTodo()" class="btn-add">+</button>
+                </div>
+                <ul id="todo-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="reveal">
+        <h2>Cotizador de Presupuesto</h2>
+        <div class="quote-container">
+            <div class="quote-grid">
+                <div class="quote-item">
+                    <label>Tipo de Proyecto</label>
+                    <select id="type">
+                        <option value="50">Landing Page ($50)</option>
+                        <option value="100">Sitio Web ($100)</option>
+                        <option value="150">Tienda Online ($150)</option>
+                    </select>
+                </div>
+                <div class="quote-item">
+                    <label>Páginas Extras ($15 c/u)</label>
+                    <input type="number" id="pages" value="0" min="0">
+                </div>
+                <div class="quote-item">
+                    <label>Funciones</label>
+                    <select id="extra">
+                        <option value="0">Básico</option>
+                        <option value="30">Formulario Avanzado (+$30)</option>
+                        <option value="50">Pasarela de Pagos (+$50)</option>
+                        <option value="40">SEO Premium (+$40)</option>
+                    </select>
+                </div>
+                <div class="quote-item">
+                    <label>Prioridad</label>
+                    <select id="deadline">
+                        <option value="1">Estándar (Gratis)</option>
+                        <option value="1.3">Urgente (+30%)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="price-display" id="price-box">
+                <div class="price-amount" id="total-price">$50</div>
+                <button id="btn-quote-wa" class="btn-wa-quote">Enviar Presupuesto</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal">
+        <h2>Tecnologías</h2>
+        <div class="skills">
+            <div class="skill"><i class="fa-brands fa-html5"></i><p>HTML5</p></div>
+            <div class="skill"><i class="fa-brands fa-css3-alt"></i><p>CSS3</p></div>
+            <div class="skill"><i class="fa-brands fa-js"></i><p>JavaScript</p></div>
+            <div class="skill"><i class="fa-brands fa-github"></i><p>GitHub</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+            <input type="text" id="contact-name" placeholder="Tu Nombre" required>
+            <input type="email" id="contact-email" placeholder="Tu Email" required>
+            <textarea id="contact-msg" placeholder="Mensaje" rows="5" required></textarea>
+            <button type="submit" class="btn-app">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Patrick Aguilera | San Luis, Argentina</p>
+    </footer>
+
+    <a href="https://wa.me/542657521775" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
